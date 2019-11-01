@@ -1,0 +1,29 @@
+{
+  "name": "lodown-melcode.github.io",
+  "version": "1.0.0",
+  "description": "My npm functional programming library",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "istanbul cover _mocha -- test/ -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melcode/lodown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melcode/lodown/issues"
+  },
+  "homepage": "https://github.com/melcode/lodown#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "i": "^0.3.6",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
+  }
+}
