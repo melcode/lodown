@@ -479,7 +479,7 @@ function extend(obj, ...objects) {
         
     });
     return obj;
-   
+     
 }
 
 module.exports.extend = extend;
