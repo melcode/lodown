@@ -476,7 +476,7 @@ function extend(obj, ...objects) {
     
         obj[keys] = objects[keys];    
     }
-        
+          
     });
     return obj;
      
