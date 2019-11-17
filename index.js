@@ -64,8 +64,9 @@ module.exports.typeOf = typeOf;
  * Else return the first elements in the array but how many numbers in numbers.
  * 
  * @param {Array} array: An array
- * @param {number} number: A number
- * @return: Return the first number in the array
+ * @param {Number} number: A number
+ * 
+ * @return {Array} Return an array with the first element
  * 
  */
 
@@ -102,7 +103,7 @@ module.exports.first = first;
  * 
  * @param {Array} array: An array
  * @param {Number} number: A number
- * @return: the last element in the array
+ * @return {array} the last element in the array
  */
 
 function last(array, number) {
@@ -141,7 +142,7 @@ module.exports.last = last;
  * @param {Array } collection: The collection over which to iterate.
  * @param {Value} value: The value to check for in the array
  * 
- * @return the index of value within the array
+ * @return {Value} the index of value within the array
  */
 
 
@@ -164,7 +165,7 @@ module.exports.indexOf = indexOf;
  * @param {Value} An array: An array of values
  * @param {Array} Value: A given value
  * 
- * @return a boolean depended upon if its in the array
+ * @return {Boolean} a boolean depended upon if its in the array
  */
  
 
@@ -221,14 +222,17 @@ function unique(array) {
 module.exports.unique = unique;
 
 /**
- * filter: Creates an array with all falsey values removed. 
- * The values false, null, 0, "", undefined, and NaN are falsey.
+ * filter: Designed to filter values in a collection based on a test. Filter
+ * takes a collection, array, or object and passes each value 
+ * in the collection through a test Function. The test Function returns 
+ * true if the value passes the test, and gives false otherwise. Values that pass 
+ * the test are collected and returned in an output Array.
  * 
  * @param {Array} array: The collection over which to iterate.
  * @param {Action} function: The Function to be applied to each value in the 
  * array
  * 
- *  @return the new filtered array of elements that passed the truth test.
+ *  @return {Array} the new filtered array of elements that passed the truth test.
  */
 
 function filter(array, action) {
@@ -245,12 +249,13 @@ module.exports.filter = filter;
 
 
 /**
- * reject: The opposite of filter; this method returns the elements of
- * that does not return truthy for.
+ * reject:  Takes in an array and a function that evaluates to be either true or false as 
+ * parameters, and returns all the elements that are evaluated to false when passed 
+ * through the function.
  * 
  * @param {Array} array: The collection to iterate over.
- * @param {Action} action: The Function to be applied to each value in the 
- * collection
+ * @param {Action} function: The Function to be applied to each value in the 
+ * array
  * 
  * @return the new filtered array of elements that passed a false test or elements with falsy values
  */
@@ -311,15 +316,17 @@ function map(collection, action) {
 module.exports.map = map;
 
 /**
- * pluck: used when we need to extract a list of a given property.
- * 
- * @param {Array} array: The array over which to iterate.
- * @param {Prop} action: The Function to be applied to each value in the 
- * collection
- * 
- * @returns value is an array of that property’s detail which we need to extract.
- * The array will contain the elements in the same order in which they were in the list.
- */
+  * pluck: Takes an array of objects and a property and returns all the values where the 
+  * object's properties matched the second parameter.
+  * 
+  * @param {array of objects} : Our first parameter is an array of objects.
+  * 
+  * @param {prop} function: The property of the element that if matched with, returns the value.
+  * 
+  * @return  Returns an array containing the values of objects
+  * that have keys that match the {property} argument.
+  */
+
 
 function pluck(array, prop) {
     return map(array, function(object, index, array) {
@@ -335,7 +342,7 @@ module.exports.pluck = pluck;
  * every: Checks if action(function) returns truthy for all elements of collection. 
  * Iteration is stopped once action returns falsey. 
  * The action is invoked on three arguments: (value|element, index|key, collection).
- * if no action(function) return false
+ * If there's no function provided, every element has return true else or else it will return false
  * 
  * @param {Array or Object} collection: The collection in which to iterate.
  * @param {Action} Function:  The function invoked per iteration
@@ -375,10 +382,11 @@ module.exports.every = every;
  * some: Checks if action returns truthy for any element of collection.
  * Iteration is stopped once action returns truthy. 
  * The action is invoked on with three arguments: (value|element, index|key, collection).
- * if no action(function)  is given return true
+ * If there's no function provided, only one element has return true for the function return true. 
+ * else the function will return false.
  * 
  * @param {Array or Object} collection: The collection over which to iterate.
- * @param {Function} Function: The Function to be applied to each value in the 
+ * @param {Action} Function: The Function to be applied to each value in the 
  * collection
  * 
  *  @returns true if any element passes the predicate check, else false.
@@ -423,16 +431,16 @@ function some(collection, action) {
 module.exports.some = some;
 
 /**
- * reduce: Reduces array to a value which is the accumulated result of running each element in collection through iteratee,
+ * reduce: Reduces array to a value which is the accumulated result of running each element in the array through iteratee,
  * where each successive invocation is supplied the return value of the previous. 
  * If accumulator is not given, the first element of collection is used as the initial value.
  * The iteratee is invoked with four arguments:
  * accumulator, value, index|key, collection
  * 
- * @param {Array or Object} collection: The collection over which to iterate.
+ * @param {Array} array: The collection over which to iterate.
  * @param {Function} function: The Function to be applied to each value in the 
  * collection
- * @param {seed} seed: the intial value 
+ * @param {seed} any datatype: the intial value 
  * 
  * @returns the accumulated value
  */
